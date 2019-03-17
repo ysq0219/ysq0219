@@ -6,7 +6,7 @@ body {
 
 a {
     text-decoration: none;
-    color: #05b0ff;
+    color: #05ffff;
 }
 
 h1 {
@@ -23,7 +23,7 @@ p{
 }
 
 h3{
-    background-color: #05b0ff;
+    background-color: #05ffff;
     color: white;
     line-height: 30px;
     padding-left:10px;
