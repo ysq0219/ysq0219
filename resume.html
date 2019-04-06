@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .body{
+            padding:0;
+            margin:0;
+        }
+        .head{
+            height:600px;
+            background-image:url("img/js.jpg");
+        }
+        .head>.container{
+            display:grid;
+            height:400px;
+            background-image:url("img/sea.jpg");
+            text-align:center;
+            vertical-align: center;
+            line-height:550px;
+            font-size: 3em;
+            color:lemonchiffon;
+        }
+        .container{
+            display:grid;
+            height:200px;
+        }
+        .container > div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            font-size: 3em;
+        }
+        .gap{
+            height:100px;
+            display:grid;
+            background-image:url("img/sea.jpg");
+        }
+        
+        .midspace{
+            height:300px;
+            background:rgb(198, 220, 248);
+        }
+       
+        .midsapce>.midcontainer{
+            display:grid;
+            height:100px;
+            background:rgb(198, 220, 248);
+        }
+        .midcontainer{
+            display:grid;
+            height:300px;
+            background:rgb(198, 220, 248);
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-gap:10px;
+            
+        }
+        .midcontainer > div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1em;
+            color:rgb(250, 244, 235);
+            margin-top:90px;
+        }
+        .room1{
+            display:grid;
+            height:94px;
+            background:rgb(108, 155, 243);
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+            grid-gap:5px;
+            margin-top:3px;
+            margin-left: 3px;
+            transition: width 2s;
+        }
+        .room1:hover{
+            background:rgb(99, 97, 105);
+        }
+        
+        .room2{
+            display:grid;
+            height:94px;
+            background:rgb(18, 226, 157);
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+            grid-gap:5px;
+            margin-top:3px;
+            transition: width 2s;
+        }
+        .room2:hover{
+            background:rgb(99, 97, 105);
+        
+        }
+        .room3{
+            display:grid;
+            height:94px;
+            background:rgb(97, 179, 211);
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+            grid-gap:5px;
+            margin-top:3px;transition: width 2s;
+        }
+        .room3:hover{
+            background:rgb(99, 97, 105);
+        
+        }
+        .room4{
+            display:grid;
+            height:94px;
+            background:rgb(4, 165, 214);
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+            grid-gap:5px;
+            margin-top:3px;
+            transition: width 2s;
+        }
+        .room4:hover{
+            background:rgb(99, 97, 105);
+        
+        }
+        .room5{
+            display:grid;
+            height:94px;
+            background:rgb(92, 134, 158);
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+            grid-gap:5px;
+            margin-top:3px;
+            transition: width 2s;
+        }
+        .room5:hover{
+            background:rgb(99, 97, 105);
+        
+        }
+        .room6{
+            display:grid;
+            height:94px;
+            background:rgb(31, 202, 194);
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+            grid-gap:5px;
+            margin-top:3px;
+            margin-right: 3px;
+            transition: width 2s;
+        }
+        .room6:hover{
+            background:rgb(99, 97, 105);
+        
+        }
+        .basic{
+            height:470px;
+            background:rgb(165, 207, 233);
+        }
+        .title{
+            height:30px;
+            width:100%;
+            background:rgb(108, 155, 243);
+            
+            color:linen;
+            font-size:2ch;
+        }
+        .name{
+            height:80px;
+            width:10%;
+            background:rgb(29, 158, 184);
+            margin-top: 5px;
+            color:linen;
+            font-size:2ch;
+            line-height: 80px;
+            transition:width 2s;
+            -moz-transition:width 2s; 
+            -webkit-transition:width 2s;
+            -o-transition:width 2s; 
+        }
+        .name:hover{
+            width:50%;
+        }
+        .sex{
+            height:80px;
+            width: 20%;
+            background:rgb(25, 150, 182);
+            margin-top: 5px;
+            color:linen;
+            font-size:2ch;
+            line-height: 80px;
+            transition:width 2s;
+            -moz-transition:width 2s; 
+            -webkit-transition:width 2s;
+            -o-transition:width 2s; 
+        }
+        .sex:hover{
+            width:50%;
+        }
+        .birthday{
+            height:80px;
+            width: 30%;
+            background:rgb(75, 131, 119);
+            margin-top: 5px;
+            color:linen;
+            font-size:2ch;
+            line-height: 80px;
+            transition:width 2s;
+            -moz-transition:width 2s; 
+            -webkit-transition:width 2s;
+            -o-transition:width 2s; 
+        }
+        .birthday:hover{
+            width:50%;
+        }
+        .email{
+            height:80px;
+            width: 40%;
+            background:rgb(114, 112, 122);
+            margin-top: 5px;
+            color:linen;
+            font-size:2ch;
+            line-height: 80px;
+            transition:width 2s;
+            -moz-transition:width 2s; 
+            -webkit-transition:width 2s;
+            -o-transition:width 2s; 
+        }
+        .email:hover{
+            width:80%;
+        }
+        .telephone{
+            height:80px;
+            width: 50%;
+            background:rgb(144, 148, 163);
+            margin-top: 5px;
+            color:linen;
+            font-size:2ch;
+            line-height: 80px;
+            transition:width 2s;
+            -moz-transition:width 2s; 
+            -webkit-transition:width 2s;
+            -o-transition:width 2s; 
+        }
+        .telephone:hover{
+            width:80%;
+        }
+        .second{
+            height:400px;
+            background:rgb(220, 255, 238);
+        }
+        .title2{
+            height:30px;
+            background:rgb(18, 226, 157);
+            color:linen;
+            font-size:2ch;
+            margin-top:3px;
+        }
+        .primary{
+            height:120px;
+            background:lightseagreen;
+            margin-top:3px;
+            color:linen;
+            font-size:3ch;
+            line-height: 120px;
+        }
+        .junior{
+            height:120px;
+            background:lightskyblue;
+            margin-top:3px;
+            color:linen;
+            font-size:3ch;
+            line-height: 120px;
+        }
+        .senior{
+            height:120px;
+            background:rgb(153, 218, 191);
+            margin-top:3px;
+            color:linen;
+            font-size:3ch;
+            line-height: 120px;
+        }
+        .college{
+            height:120px;
+            background:rgb(136, 186, 206);
+            margin-top:3px;
+            color:linen;
+            font-size:3ch;
+            line-height: 120px;
+        }
+        .third{
+            height:120px;
+            background:rgb(25, 150, 182);
+            margin-top:3px;
+        }
+        .fourth{
+            height:300px;
+            background:rosybrown;
+        }
+        .title4{
+            height:30px;
+            background:sandybrown;
+            color:linen;
+            font-size:2ch;
+            margin-top:3px;
+        }
+        .fifth{
+            height:300px;
+            background:seagreen;
+        }
+        .title5{
+            height:30px;
+            background:teal;
+            color:linen;
+            font-size:2ch;
+            margin-top:3px;
+        }
+        .record1{
+            height:40px;
+            background:white;
+            margin-top:15px;
+        }
+        .record2{
+            height:40px;
+            background:burlywood
+        }
+        .record3{
+            height:40px;
+            background:white
+        }
+        .record4{
+            height:40px;
+            background:burlywood
+        }
+        .record5{
+            height:40px;
+            background:white
+        }
+        .record6{
+            height:40px;
+            background:burlywood;
+            margin-bottom: 5px;
+        }
+        .sixth{
+            height:300px;
+            background:darksalmon;
+        }
+        .title6{
+            height:30px;
+            background:maroon;
+            color:linen;
+            font-size:2ch;
+            margin-top:3px;
+        }
+        .sixth>.room{
+            height:200px;
+            background:darksalmon;
+        }
+        .room{
+            display:grid;
+            height:300px;
+            background:darksalmon;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap:40px;
+        }
+        .step1{
+            height:200px;
+            width: 300px;
+            margin-top:10px;
+            margin-left:50px;
+            background:palevioletred;
+            color:linen;
+            font-size:3ch;
+            border-radius:20%;
+        }
+        .step2{
+            height:200px;
+            width:300px;
+            margin-top:25px;
+            margin-left:40px;
+            background:palevioletred;
+            color:linen;
+            font-size:3ch;
+            border-radius:20%;
+        }
+        .step3{
+            height:200px;
+            width:300px;
+            margin-top:50px;
+            margin-left:50px;
+            background:palevioletred;
+            color:linen;
+            font-size:3ch;
+            border-radius:20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <div class="container">-杨思琪-</div>
+    </div>
+    <div class="gap"></div>
+    <div class="midspace">
+        <div class="midcontainer">
+            <div class="room1">BASIC INFORMATION</div>
+            <div class="room2">EDU BACKGROUND</div>
+            <div class="room3">WORKING EXPERIENCE</div>
+            <div class="room4">PRIZE RECORD</div>
+            <div class="room5">FUTURE PLAN</div>
+            <div class="room6">ENGLISH EDITION</div>
+        </div>
+    </div>
+    <div class="basic">
+        <div class="title">BASIC INTRODUCTION</div>
+        <div class="name">姓名：杨思琪</div>
+        <div class="sex">性别：女</div>
+        <div class="birthday">生日：1999.2.19</div>
+        <div class="email">邮箱：434728706@qq.com</div>
+        <div class="telephone">手机：13162907556</div>
+    </div>
+    <div class="second">
+        <div class="title2">EDUCATION BACKGROUND</div>
+        <div class="primary">小学学历：primary primary primary primary primary primary primary primary primary</div>
+        <div class="junior">初中学历：junior junior junior junior junior junior junior junior junior</div>
+        <div class="senior">高中学历：senior senior senior senior senior senior senior senior senior</div>
+        <div class="college">大学学历：college college college college college college college college college</div>
+    </div>
+    <div class="third">
+            <div class="title3"></div>
+            <div class="experience"></div>
+        </div>
+    <div class="fourth">
+        <div class="title4">WORKING EXPERIENCE</div>
+        <div class="experience"></div>
+    </div>
+    <div class="fifth">
+        <div class="title5">PRIZE RECORD</div>
+        <div class="record1"></div>
+        <div class="record2"></div>
+        <div class="record3"></div>
+        <div class="record4"></div>
+        <div class="record5"></div>
+        <div class="record6"></div>
+    </div>
+    <div class="sixth">
+        <div class="title6">FUTURE PLAN</div>
+        <div class="room">
+                <div class="step1">STEP 1</div>
+                <div class="step2">STEP 2</div>
+                <div class="step3">STEP 3</div>
+        </div>
+        
+    </div>
+    </div>
+
+</body>
+</html>
